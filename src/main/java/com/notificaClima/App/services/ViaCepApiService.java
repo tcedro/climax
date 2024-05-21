@@ -16,7 +16,7 @@ import ch.qos.logback.classic.pattern.Util;
 
 @Service
 public class ViaCepApiService {
-    public Address searchCep(String cep){
+    public Address searchAddressWithCep(String cep){
         String endURL = "https://viacep.com.br/ws/" + cep + "/json/";
         try{
             URL url = new URL(endURL);

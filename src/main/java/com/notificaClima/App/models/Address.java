@@ -26,7 +26,6 @@ public class Address {
         this.ddd = ddd;
         this.siafi = siafi;
     }
-
     public String getCep() {
         return cep;
     }
@@ -87,6 +86,4 @@ public class Address {
     public void setSiafi(String siafi) {
         this.siafi = siafi;
     }
-
-    
 }

@@ -5,14 +5,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.notificaClima.App.models.Address;
 import com.notificaClima.App.services.ViaCepApiService;
+
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class CepApiController {
     @Autowired
     ViaCepApiService viaCepApiService;
-    @GetMapping("/cep")
-    public Address getAddress() {
-        return viaCepApiService.searchCep("30535-555");
+    
+    @GetMapping("/cep/{cepNumber}")
+    public Address getAddress(@PathVariable String cepNumber) {
+        return viaCepApiService.searchAddressWithCep(cepNumber);
     }
 }
