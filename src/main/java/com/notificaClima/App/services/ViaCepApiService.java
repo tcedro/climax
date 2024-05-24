@@ -10,9 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.notificaClima.App.models.Address;
-import com.notificaClima.App.util.ConvertJsonToString;
-
-import ch.qos.logback.classic.pattern.Util;
+import com.notificaClima.App.utils.ConvertJsonToString;
 
 @Service
 public class ViaCepApiService {

@@ -46,4 +46,9 @@ public class User {
     public void setPass(String pass) {
         this.pass = pass;
     }
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + ", login=" + login + ", pass=" + pass + "]";
+    }
 }
+
