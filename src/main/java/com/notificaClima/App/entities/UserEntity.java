@@ -1,5 +1,9 @@
 package com.notificaClima.App.entities;
 
+import org.springframework.beans.BeanUtils;
+
+import com.notificaClima.App.dto.UserDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +15,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
 @Entity
 @Table(name="TB_USER")
 public class UserEntity {
@@ -34,7 +39,9 @@ public class UserEntity {
         this.login = login;
         this.password = pass;
     }
-    
+    public UserEntity(UserDTO u) {
+        BeanUtils.copyProperties(u, this);
+    }
     @Override
     public String toString() {
         return "User [id=" + id + ", name=" + name + ", login=" + login + ", pass=" + password + "]";

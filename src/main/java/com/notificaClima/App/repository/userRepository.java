@@ -1,5 +1,8 @@
 package com.notificaClima.App.repository;
 
-public class userRepository {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.notificaClima.App.entities.UserEntity;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long>{
 }

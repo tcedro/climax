@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Address {
+public class AddressEntity {
     private String cep;
     private String logradouro;
     private String complemento;
@@ -16,9 +16,9 @@ public class Address {
     private String gia;
     private String ddd;
     private String siafi;
-    public Address() {
+    public AddressEntity() {
     }
-    public Address(String cep, String logradouro, String complemento, String bairro, String localidade, String uf,
+    public AddressEntity(String cep, String logradouro, String complemento, String bairro, String localidade, String uf,
             String ibge, String gia, String ddd, String siafi) {
         this.cep = cep;
         this.logradouro = logradouro;

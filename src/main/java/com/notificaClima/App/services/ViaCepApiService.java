@@ -9,12 +9,12 @@ import java.net.http.HttpRequest;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
-import com.notificaClima.App.models.Address;
+import com.notificaClima.App.entities.AddressEntity;
 import com.notificaClima.App.utils.ConvertJsonToString;
 
 @Service
 public class ViaCepApiService {
-    public Address searchAddressWithCep(String cep){
+    public AddressEntity searchAddressWithCep(String cep){
         String endURL = "https://viacep.com.br/ws/" + cep + "/json/";
         try{
             URL url = new URL(endURL);
@@ -25,7 +25,7 @@ public class ViaCepApiService {
                 BufferedReader buff = new BufferedReader(new InputStreamReader((conexao.getInputStream()), "utf-8"));
                 String convertJsonString = ConvertJsonToString.apply(buff);
                 Gson gson = new Gson();
-                Address addr = gson.fromJson(convertJsonString, Address.class);
+                AddressEntity addr = gson.fromJson(convertJsonString, AddressEntity.class);
                 
                 return addr;
             }catch (Exception e) { e.printStackTrace(); }

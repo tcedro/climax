@@ -3,7 +3,7 @@ package com.notificaClima.App.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.notificaClima.App.models.Address;
+import com.notificaClima.App.entities.AddressEntity;
 import com.notificaClima.App.services.ViaCepApiService;
 
 
@@ -16,7 +16,7 @@ public class CepApiController {
     ViaCepApiService viaCepApiService;
     
     @GetMapping("/cep/{cepNumber}")
-    public Address getAddress(@PathVariable String cepNumber) {
+    public AddressEntity getAddress(@PathVariable String cepNumber) {
         return viaCepApiService.searchAddressWithCep(cepNumber);
     }
 }
