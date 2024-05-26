@@ -28,6 +28,6 @@ public class EmailService {
             
             return "Email send with success!";
 
-        } catch(Exception e) { return e.getMessage(); }
+        } catch(Exception e) { return "Error: Email not send w/ success."; }
     }
 }

@@ -2,7 +2,7 @@ package com.notificaClima.App.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.notificaClima.App.models.User;
+import com.notificaClima.App.entities.UserEntity;
 import com.notificaClima.App.services.UserService;
 import com.notificaClima.App.utils.EmailRegexValidator;
 
@@ -25,7 +25,7 @@ public class UserController {
         @RequestParam(value = "login") String login,
         @RequestParam(value= "pass") String pass, @RequestParam(value= "name") String name) {
             if(EmailRegexValidator.validateEmail(login)) {
-                userService.insert(new User(name, login, pass)); 
+                userService.insert(new UserEntity(name, login, pass)); 
             
             } else { return false; }
         
@@ -39,7 +39,7 @@ public class UserController {
     }
     
     @GetMapping(value = "/{id}")
-    public User searchById(@PathVariable Long id) {
+    public UserEntity searchById(@PathVariable Long id) {
         return userService.searchById(id);
     }
 }
