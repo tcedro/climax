@@ -35,8 +35,7 @@ public class UserService {
     public UserDTO searchById(Long id) {
         return new UserDTO(userRepository.findById(id).get());
     }
-    public String sendText() {
-        return emailService.sendText("Nota da Prova", "Sua nota de PO foi 17/20", "maria.kos@sga.pucminas.br");
-    }
-  
+    // public String sendText() {
+    //     return emailService.sendText("Nota da Prova", "Sua nota de PO foi 17/20", "maria.kos@sga.pucminas.br");
+    // }
 }

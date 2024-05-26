@@ -3,6 +3,7 @@ package com.notificaClima.App.entities;
 import org.springframework.beans.BeanUtils;
 
 import com.notificaClima.App.dto.UserDTO;
+import com.notificaClima.App.utils.EncoderPassword;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +38,7 @@ public class UserEntity {
     public UserEntity(String name, String login, String pass) {
         this.name = name;
         this.login = login;
-        this.password = pass;
+        this.password = EncoderPassword.toMD5(pass);
     }
     public UserEntity(UserDTO u) {
         BeanUtils.copyProperties(u, this);

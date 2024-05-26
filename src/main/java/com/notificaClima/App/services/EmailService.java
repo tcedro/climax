@@ -1,6 +1,5 @@
 package com.notificaClima.App.services;
 
-import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
