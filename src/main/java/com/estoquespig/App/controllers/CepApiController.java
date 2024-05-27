@@ -1,11 +1,10 @@
-package com.notificaClima.App.controllers;
+package com.estoquespig.App.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.notificaClima.App.entities.AddressEntity;
-import com.notificaClima.App.services.ViaCepApiService;
-
+import com.estoquespig.App.entities.AddressEntity;
+import com.estoquespig.App.services.ViaCepApiService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

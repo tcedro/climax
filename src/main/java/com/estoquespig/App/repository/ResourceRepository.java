@@ -1,8 +1,8 @@
-package com.notificaClima.App.repository;
+package com.estoquespig.App.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.notificaClima.App.entities.ResourceEntity;
+import com.estoquespig.App.entities.ResourceEntity;
 
 public interface ResourceRepository extends JpaRepository<ResourceEntity, Long> {
 }

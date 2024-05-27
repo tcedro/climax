@@ -1,4 +1,4 @@
-package com.notificaClima.App.utils;
+package com.estoquespig.App.utils;
 
 import org.apache.commons.validator.routines.EmailValidator;
 

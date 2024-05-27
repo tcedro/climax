@@ -1,8 +1,8 @@
-package com.notificaClima.App.dto;
+package com.estoquespig.App.dto;
 
 import org.springframework.beans.BeanUtils;
 
-import com.notificaClima.App.entities.ResourceEntity;
+import com.estoquespig.App.entities.ResourceEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

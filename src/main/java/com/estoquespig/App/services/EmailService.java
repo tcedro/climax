@@ -1,4 +1,4 @@
-package com.notificaClima.App.services;
+package com.estoquespig.App.services;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

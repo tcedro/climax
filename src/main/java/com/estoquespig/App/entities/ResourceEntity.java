@@ -1,8 +1,8 @@
-package com.notificaClima.App.entities;
+package com.estoquespig.App.entities;
 
 import org.springframework.beans.BeanUtils;
 
-import com.notificaClima.App.dto.ResourceDTO;
+import com.estoquespig.App.dto.ResourceDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

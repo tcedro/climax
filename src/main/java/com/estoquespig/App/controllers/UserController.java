@@ -1,9 +1,9 @@
-package com.notificaClima.App.controllers;
+package com.estoquespig.App.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.notificaClima.App.dto.UserDTO;
-import com.notificaClima.App.services.UserService;
+import com.estoquespig.App.dto.UserDTO;
+import com.estoquespig.App.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

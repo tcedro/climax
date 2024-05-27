@@ -1,4 +1,4 @@
-package com.notificaClima.App.controllers;
+package com.estoquespig.App.controllers;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.notificaClima.App.dto.ResourceDTO;
-import com.notificaClima.App.services.ResourceService;
+import com.estoquespig.App.dto.ResourceDTO;
+import com.estoquespig.App.services.ResourceService;
 
 @RestController
 @RequestMapping(value = "/resource")

@@ -1,13 +1,13 @@
-package com.notificaClima.App.services;
+package com.estoquespig.App.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.notificaClima.App.dto.UserDTO;
-import com.notificaClima.App.entities.UserEntity;
-import com.notificaClima.App.repository.UserRepository;
+import com.estoquespig.App.dto.UserDTO;
+import com.estoquespig.App.entities.UserEntity;
+import com.estoquespig.App.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -34,7 +34,7 @@ public class UserService {
         return new UserDTO(userRepository.save(userEntity));
     }
     public void delete(Long id) {
-        UserEntity userEntity = userRepository.getReferenceById(id);
+        UserEntity userEntity = userRepository.findById(id).get();
         String text = userEntity.getName() + ", seu perfil foi deletado em nosso site.";
         emailService.sendText("New Account", text, userEntity.getLogin());
         userRepository.delete(userEntity);

@@ -1,4 +1,4 @@
-package com.notificaClima.App.utils;
+package com.estoquespig.App.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

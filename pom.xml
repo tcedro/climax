@@ -8,11 +8,11 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.notificaClima</groupId>
+	<groupId>com.estoquespig</groupId>
 	<artifactId>App</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>App</name>
-	<description>Projeto com objetivo de notificar os usuários cadastrados, em relação ao tempo climático.</description>
+	<description>Projeto de controle de estoque de uma lanchonete</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

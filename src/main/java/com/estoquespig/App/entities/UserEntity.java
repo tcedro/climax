@@ -1,9 +1,9 @@
-package com.notificaClima.App.entities;
+package com.estoquespig.App.entities;
 
 import org.springframework.beans.BeanUtils;
 
-import com.notificaClima.App.dto.UserDTO;
-import com.notificaClima.App.utils.EncoderPassword;
+import com.estoquespig.App.dto.UserDTO;
+import com.estoquespig.App.utils.EncoderPassword;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

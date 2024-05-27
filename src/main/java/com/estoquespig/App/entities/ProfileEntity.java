@@ -1,4 +1,8 @@
-package com.notificaClima.App.entities;
+package com.estoquespig.App.entities;
+
+import org.springframework.beans.BeanUtils;
+
+import com.estoquespig.App.dto.ProfileDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,4 +27,7 @@ public class ProfileEntity {
     private Long id;
     private String description;
 
+    public ProfileEntity(ProfileDTO p) {
+        BeanUtils.copyProperties(p, this);
+    }
 }

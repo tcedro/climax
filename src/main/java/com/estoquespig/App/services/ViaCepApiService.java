@@ -1,4 +1,4 @@
-package com.notificaClima.App.services;
+package com.estoquespig.App.services;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,9 +7,9 @@ import java.net.URL;
 
 import org.springframework.stereotype.Service;
 
+import com.estoquespig.App.entities.AddressEntity;
+import com.estoquespig.App.utils.ConvertJsonToString;
 import com.google.gson.Gson;
-import com.notificaClima.App.entities.AddressEntity;
-import com.notificaClima.App.utils.ConvertJsonToString;
 
 @Service
 public class ViaCepApiService {

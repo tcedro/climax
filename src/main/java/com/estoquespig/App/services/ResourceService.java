@@ -1,13 +1,13 @@
-package com.notificaClima.App.services;
+package com.estoquespig.App.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.notificaClima.App.dto.ResourceDTO;
-import com.notificaClima.App.entities.ResourceEntity;
-import com.notificaClima.App.repository.ResourceRepository;
+import com.estoquespig.App.dto.ResourceDTO;
+import com.estoquespig.App.entities.ResourceEntity;
+import com.estoquespig.App.repository.ResourceRepository;
 
 
 @Service

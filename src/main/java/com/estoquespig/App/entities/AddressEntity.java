@@ -1,4 +1,4 @@
-package com.notificaClima.App.entities;
+package com.estoquespig.App.entities;
 
 import lombok.Getter;
 import lombok.Setter;
