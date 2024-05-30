@@ -2,7 +2,7 @@ package com.estoquespig.App.dto;
 
 import org.springframework.beans.BeanUtils;
 
-import com.estoquespig.App.entities.ProductEntity;
+import com.estoquespig.App.entities.SuplierEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +21,7 @@ public class SuplierDTO {
     private String cpfCnpj;
     private String email;
 
-    public SuplierDTO(ProductEntity productEntity) {
-        BeanUtils.copyProperties(productEntity, this);
+    public SuplierDTO(SuplierEntity suplierEntity) {
+        BeanUtils.copyProperties(suplierEntity, this);
     }
 }

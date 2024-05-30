@@ -7,6 +7,9 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.estoquespig.App.dto.SuplierDTO;
+import com.estoquespig.App.dto.WarningEmailDTO;
+
 @Service
 public class EmailService {
     @Autowired
@@ -14,7 +17,25 @@ public class EmailService {
     @Value("${spring.mail.username}")
     private String from;
 
-    public String sendText(String topic, String text, String to) {
+    @Autowired
+    SuplierService suplierService;
+
+    public String warningEmailMensage(Long id, WarningEmailDTO warningEmailDTO) {
+        try{
+            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+            SuplierDTO suplierDTO = suplierService.searchById(id); 
+            simpleMailMessage.setFrom(from);
+            simpleMailMessage.setTo(suplierDTO.getEmail());
+            simpleMailMessage.setSubject(warningEmailDTO.getTopic());
+            simpleMailMessage.setText(warningEmailDTO.getText());
+            
+            javaMailSender.send(simpleMailMessage);
+            
+            return "Email send with success!";
+
+        } catch(Exception e) { return "Error: Email not send w/ success."; }
+    }
+    public String sendSimpleText(String topic, String text, String to) {
         try{
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
             

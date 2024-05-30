@@ -24,19 +24,19 @@ public class UserService {
     public void insert(UserDTO user) {
         UserEntity userEntity = new UserEntity(user);
         String text = "Parabens " + user.getName() + ", você acabou de se registrar em nosso site.";
-        emailService.sendText("New Account", text, user.getLogin());
+        emailService.sendSimpleText("New Account", text, user.getLogin());
         userRepository.save(userEntity);
     }
     public UserDTO edit(UserDTO user) {
         UserEntity userEntity = new UserEntity(user);
         String text = user.getName() + ", você acabou de editar seu perfil no nosso site.";
-        emailService.sendText("Edit Account", text, user.getLogin());
+        emailService.sendSimpleText("Edit Account", text, user.getLogin());
         return new UserDTO(userRepository.save(userEntity));
     }
     public void delete(Long id) {
         UserEntity userEntity = userRepository.findById(id).get();
         String text = userEntity.getName() + ", seu perfil foi deletado em nosso site.";
-        emailService.sendText("New Account", text, userEntity.getLogin());
+        emailService.sendSimpleText("New Account", text, userEntity.getLogin());
         userRepository.delete(userEntity);
     }
     public UserDTO searchById(Long id) {
