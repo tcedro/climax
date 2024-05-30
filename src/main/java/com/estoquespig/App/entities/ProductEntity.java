@@ -2,34 +2,45 @@ package com.estoquespig.App.entities;
 
 import org.springframework.beans.BeanUtils;
 
-import com.estoquespig.App.dto.ProfileDTO;
+import com.estoquespig.App.dto.ProductDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@EqualsAndHashCode(of = "id")
 
 @Entity
-@Table(name = "TB_PROFILE")
-public class ProfileEntity {
+@Table(name = "TB_PRODUCT")
+public class ProductEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int amount;
+    private String productName;
     private String description;
+    private String expirationDate;
+    private double salePrice;
 
-    public ProfileEntity(ProfileDTO p) {
+
+    public ProductEntity(ProductDTO p) {
         BeanUtils.copyProperties(p, this);
     }
+
+    @ManyToOne
+    @JoinColumn(name = "id_suplier")
+    private SuplierEntity suplierEntity;
 }
