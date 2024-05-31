@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.estoquespig.App.dto.ProductDTO;
 import com.estoquespig.App.entities.ProductEntity;
@@ -14,6 +15,7 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
+    @Transactional(readOnly = true)   
     public List<ProductDTO> listAll() {
         List<ProductEntity> productEntities = productRepository.findAll();
         return productEntities.stream().map(ProductDTO::new).toList();
@@ -33,6 +35,7 @@ public class ProductService {
         productRepository.delete(productEntity);
     }
 
+    @Transactional(readOnly = true)   
     public ProductDTO findById(Long id) {
         return new ProductDTO(productRepository.findById(id).get());
     }

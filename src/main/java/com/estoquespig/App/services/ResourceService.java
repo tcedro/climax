@@ -9,12 +9,15 @@ import com.estoquespig.App.dto.ResourceDTO;
 import com.estoquespig.App.entities.ResourceEntity;
 import com.estoquespig.App.repository.ResourceRepository;
 
+import org.springframework.transaction.annotation.Transactional;
 
+@Deprecated
 @Service
 public class ResourceService {
     @Autowired
     private ResourceRepository resourceRepository;
 
+    @Transactional(readOnly = true) 
     public List <ResourceDTO> listAll() {
         List<ResourceEntity> resources = resourceRepository.findAll();
         return resources.stream().map(ResourceDTO::new).toList();
@@ -35,6 +38,7 @@ public class ResourceService {
         resourceRepository.delete(resourceEntity);
     }
 
+    @Transactional(readOnly = true)    
     public ResourceDTO searchById(Long id) {
         return new ResourceDTO(resourceRepository.findById(id).get());
     }

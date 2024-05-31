@@ -14,16 +14,18 @@ import com.estoquespig.App.dto.WarningEmailDTO;
 public class EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
+    
     @Value("${spring.mail.username}")
     private String from;
 
     @Autowired
     SuplierService suplierService;
 
-    public String warningEmailMensage(Long id, WarningEmailDTO warningEmailDTO) {
+    public String warningEmailMensage(WarningEmailDTO warningEmailDTO) {
         try{
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-            SuplierDTO suplierDTO = suplierService.searchById(id); 
+            SuplierDTO suplierDTO = suplierService.searchById(warningEmailDTO.getId()); 
+            
             simpleMailMessage.setFrom(from);
             simpleMailMessage.setTo(suplierDTO.getEmail());
             simpleMailMessage.setSubject(warningEmailDTO.getTopic());
@@ -35,6 +37,7 @@ public class EmailService {
 
         } catch(Exception e) { return "Error: Email not send w/ success."; }
     }
+
     public String sendSimpleText(String topic, String text, String to) {
         try{
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.estoquespig.App.dto.UserDTO;
 import com.estoquespig.App.entities.UserEntity;
@@ -17,6 +18,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Transactional(readOnly = true)   
     public List<UserDTO> listAll() {
         List<UserEntity> users = userRepository.findAll();
         return users.stream().map(UserDTO::new).toList();
@@ -39,6 +41,7 @@ public class UserService {
         emailService.sendSimpleText("New Account", text, userEntity.getLogin());
         userRepository.delete(userEntity);
     }
+    @Transactional(readOnly = true)   
     public UserDTO searchById(Long id) {
         return new UserDTO(userRepository.findById(id).get());
     }

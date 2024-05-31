@@ -22,6 +22,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 
+@Deprecated
 @Entity
 @Table(name = "TB_RESOURCE")
 public class ResourceEntity {

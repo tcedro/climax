@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.estoquespig.App.dto.ResourceDTO;
 import com.estoquespig.App.services.ResourceService;
 
+@Deprecated
 @RestController
 @RequestMapping(value = "/resource")
 @CrossOrigin

@@ -3,6 +3,7 @@ package com.estoquespig.App.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.estoquespig.App.dto.SuplierDTO;
 import com.estoquespig.App.dto.WarningEmailDTO;
@@ -16,15 +17,17 @@ public class SuplierService {
     @Autowired
     SuplierRepository suplierRepository;
 
-    public String notifierEmailSuplier(Long id, WarningEmailDTO warningEmailDTO) {
-        return emailService.warningEmailMensage(id, warningEmailDTO);
+    public String notifierEmailSuplier(WarningEmailDTO warningEmailDTO) {
+        return emailService.warningEmailMensage(warningEmailDTO);
     }
 
+    @Transactional(readOnly = true)   
     public SuplierDTO searchById(Long id) {
         SuplierEntity suplierEntity = suplierRepository.findById(id).get();
         return new SuplierDTO(suplierEntity);
     }
 
+    @Transactional(readOnly = true)   
     public List<SuplierDTO>listAll() {
         List<SuplierEntity> suplierEntities = suplierRepository.findAll();
         return suplierEntities.stream().map(SuplierDTO::new).toList();

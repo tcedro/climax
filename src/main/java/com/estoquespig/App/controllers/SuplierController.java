@@ -28,8 +28,8 @@ public class SuplierController {
     }
 
     @GetMapping("/notify:{id}")
-    public String notify(@PathVariable Long id, @RequestBody WarningEmailDTO warningEmailDTO) {
-       return suplierService.notifierEmailSuplier(id, warningEmailDTO);
+    public String notify(@RequestBody WarningEmailDTO warningEmailDTO) {
+       return suplierService.notifierEmailSuplier(warningEmailDTO);
     }
 
     @GetMapping

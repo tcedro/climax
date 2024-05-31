@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WarningEmailDTO {
-    public String id;
+    public Long id;
     public String topic;
     public String text;
 }

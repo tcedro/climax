@@ -1,7 +1,6 @@
 package com.estoquespig.App.entities;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Value;
 
 import com.estoquespig.App.dto.SuplierDTO;
 
@@ -25,12 +24,15 @@ import lombok.Setter;
 public class SuplierEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nameSuplier;
+    
     @Column(nullable = false)
     private String cellphone;
+    
     @Column(unique = true)
     private String cpfCnpj;
+    
     @Column(unique = true)
     private String email;
 
