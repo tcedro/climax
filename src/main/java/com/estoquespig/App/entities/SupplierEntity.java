@@ -2,7 +2,7 @@ package com.estoquespig.App.entities;
 
 import org.springframework.beans.BeanUtils;
 
-import com.estoquespig.App.dto.SuplierDTO;
+import com.estoquespig.App.dto.SupplierDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,12 +20,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "TB_SUPLIER")
-public class SuplierEntity {
+@Table(name = "TB_SUPPLIER")
+public class SupplierEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nameSuplier;
+    private String nameSupplier;
     
     @Column(nullable = false)
     private String cellphone;
@@ -36,7 +36,7 @@ public class SuplierEntity {
     @Column(unique = true)
     private String email;
 
-    public SuplierEntity(SuplierDTO suplierDTO) {
+    public SupplierEntity(SupplierDTO suplierDTO) {
         BeanUtils.copyProperties(suplierDTO, this);
     }
 }

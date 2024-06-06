@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.estoquespig.App.dto.SuplierDTO;
+import com.estoquespig.App.dto.SupplierDTO;
 import com.estoquespig.App.dto.WarningEmailDTO;
-import com.estoquespig.App.services.SuplierService;
+import com.estoquespig.App.services.SupplierService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/suplier")
-public class SuplierController {
-    @Autowired SuplierService suplierService;
+@RequestMapping("/supplier")
+public class SupplierController {
+    @Autowired SupplierService suplierService;
     
     @GetMapping("/{id}")
-    public SuplierDTO findById(@PathVariable Long id) {   
+    public SupplierDTO findById(@PathVariable Long id) {   
         return suplierService.searchById(id);
     }
 
@@ -33,17 +33,17 @@ public class SuplierController {
     }
 
     @GetMapping
-    public List<SuplierDTO> listAll() {
+    public List<SupplierDTO> listAll() {
         return suplierService.listAll();
     }
 
     @PostMapping
-    public void insert(@RequestBody SuplierDTO suplierDTO){
+    public void insert(@RequestBody SupplierDTO suplierDTO){
         suplierService.save(suplierDTO);
     }
 
     @PutMapping
-    public SuplierDTO edit(@RequestBody SuplierDTO suplierDTO) {
+    public SupplierDTO edit(@RequestBody SupplierDTO suplierDTO) {
         return suplierService.edit(suplierDTO);
     }
 }

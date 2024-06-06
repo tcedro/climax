@@ -7,7 +7,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.estoquespig.App.dto.SuplierDTO;
+import com.estoquespig.App.dto.SupplierDTO;
+import com.estoquespig.App.dto.SupplierDTO;
 import com.estoquespig.App.dto.WarningEmailDTO;
 
 @Service
@@ -19,12 +20,12 @@ public class EmailService {
     private String from;
 
     @Autowired
-    SuplierService suplierService;
+    SupplierService suplierService;
 
     public String warningEmailMensage(WarningEmailDTO warningEmailDTO) {
         try{
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-            SuplierDTO suplierDTO = suplierService.searchById(warningEmailDTO.getId()); 
+            SupplierDTO suplierDTO = suplierService.searchById(warningEmailDTO.getId()); 
             
             simpleMailMessage.setFrom(from);
             simpleMailMessage.setTo(suplierDTO.getEmail());

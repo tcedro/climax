@@ -42,5 +42,5 @@ public class ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_suplier")
-    private SuplierEntity suplierEntity;
+    private SupplierEntity suplierEntity;
 }
